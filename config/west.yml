@@ -2,13 +2,17 @@ manifest:
   defaults:
     revision: v0.2
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+  - name: zmkfirmware
+    url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      import: app/west.yml
+  - name: zmk
+    remote: zmkfirmware
+    import: app/west.yml
+  - name: adaptive
+    url: https://github.com/klausweiss/zmk
+    revision: fix/adaptive-keys
+    path: modules/adaptive
   self:
     path: config
